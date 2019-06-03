@@ -14,7 +14,7 @@ class Confirmation extends Component{
   }
 
   render(){
-    const {values: { firstName, lastName, email, city, state, dobmonth, dobday, dobyear, phoneNumber }} = this.props;
+    const {values: { firstName, lastName, email, city, state, dobmonth, phoneNumber }} = this.props;
 
     return(
       <div>
