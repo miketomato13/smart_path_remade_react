@@ -52,6 +52,7 @@ class Confirmation extends Component{
             <List.Icon name='marker' />
             <List.Content>{phoneNumber}</List.Content>
           </List.Item>
+          
 
           <Button onClick={this.back}>Back</Button>
           <Button onClick={this.saveAndContinue}>Confirm</Button>
