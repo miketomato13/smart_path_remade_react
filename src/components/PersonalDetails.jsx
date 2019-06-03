@@ -1,7 +1,7 @@
 // PersonalDetails.jsx
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
-import { throws } from 'assert';
+
 
 class PersonalDetails extends Component {
   saveAndContinue = (e) => {
@@ -18,26 +18,23 @@ class PersonalDetails extends Component {
     const { values } = this.props
     return(
       <Form color='blue' >
-        <h1 className="ui centered">Enter Personal Details</h1>
+        <h1 className="ui centered">Confirm Your Address to Verify Eligibility</h1>
         <Form.Field>
-          <label>Age</label>
-          <input placeholder='Age'
-           onChange={this.props.handleChange('age')}
-           defaultValue={values.age}
+          <input placeholder='Address'
+           onChange={this.props.handleChange('address')}
+           defaultValue={values.address}
           />
         </Form.Field>
         <Form.Field>
-          <label>City</label>
           <input placeholder='City'
           onChange={this.props.handleChange('city')}
           defaultValue={values.city}
           />
         </Form.Field>
         <Form.Field>
-          <label>Country</label>
-          <input placeholder='Country'
-          onChange={this.props.handleChange('country')}
-          defaultValue={values.country}
+          <input placeholder='State'
+          onChange={this.props.handleChange('state')}
+          defaultValue={values.state}
           />
         </Form.Field>
         <Button onClick={this.back}>Back</Button>
@@ -46,5 +43,6 @@ class PersonalDetails extends Component {
     )
 }
 }
+
 
 export default PersonalDetails;

@@ -1,6 +1,7 @@
 // UserDetails.jsx
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import Disclaimer from './Disclaimer'
 
 class UserDetails extends Component {
 
@@ -12,10 +13,10 @@ class UserDetails extends Component {
   render(){
     const { values } = this.props;
     return(
+      <div>
       <Form >
-        <h1 className="ui centered">Enter User Details</h1>
+        <h2 className="ui centered">Find out if you are Eligible for the Food Stamps Program with our Guide by Completing your information below.</h2>
         <Form.Field>
-          <label>First Name</label>
           <input
           placeholder='First Name'
           onChange={this.props.handleChange('firstName')}
@@ -23,7 +24,6 @@ class UserDetails extends Component {
           />
         </Form.Field>
         <Form.Field>
-          <label>Last Name</label>
           <input
           placeholder='Last Name'
           onChange={this.props.handleChange('lastName')}
@@ -31,15 +31,23 @@ class UserDetails extends Component {
           />
         </Form.Field>
         <Form.Field>
-          <label>Email Address</label>
           <input
           placeholder='Email Address'
           onChange={this.props.handleChange('email')}
           defaultValue={values.email}
           />
         </Form.Field>
+        <Form.Field>
+          <input
+          placeholder='Zip'
+          onChange={this.props.handleChange('zip')}
+          defaultValue={values.zip}
+          />
+        </Form.Field>
         <Button onClick={this.saveAndContinue}>Continue >></Button>
       </Form>
+      <Disclaimer />
+      </div>
     )
   }
 }
