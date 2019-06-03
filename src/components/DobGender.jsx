@@ -1,6 +1,6 @@
 // DobGender.jsx
 import React, { Component } from 'react';
-import { Select, Button, Grid, Form } from 'semantic-ui-react';
+import { Dropdown, Button, Grid, Form } from 'semantic-ui-react';
 
 class DobGender extends Component {
 
@@ -16,72 +16,6 @@ class DobGender extends Component {
 
 
 render(){
-  const monthOptions = [
-    {
-      key: 'January',
-      text: 'January',
-      value: 'Janaury',
-    },
-    {
-      key: 'February',
-      text: 'February',
-      value: 'February',
-    },
-    {
-      key: 'March',
-      text: 'March',
-      value: 'March',
-    },
-    {
-      key: 'April',
-      text: 'April',
-      value: 'April',
-    },
-    {
-      key: 'May',
-      text: 'May',
-      value: 'May',
-    },
-    {
-      key: 'June',
-      text: 'June',
-      value: 'June',
-    },
-    {
-      key: 'July',
-      text: 'July',
-      value: 'July',
-    },
-    {
-      key: 'August',
-      text: 'August',
-      value: 'August',
-    },
-    {
-      key: 'September',
-      text: 'September',
-      value: 'September',
-    },
-    {
-      key: 'October',
-      text: 'October',
-      value: 'October',
-    },
-    {
-      key: 'November',
-      text: 'November',
-      value: 'November',
-    },
-    {
-      key: 'December',
-      text: 'December',
-      value: 'December',
-    },
-  ]
-
-
-
-
   const { values } = this.props
 
   return(
@@ -90,16 +24,26 @@ render(){
         <h2 className="ui centered">Confirm Your Date of Birth and Gender To Verify Eligibility</h2>
         <Grid columns='equal'>
         <Grid.Column>
-          <Select
-            placeholder='Month'
-            fluid
-            selection
-            onChange={this.props.handleChange('dobmonth')}
-            defaultValue={values.dobmonth}
-            options={monthOptions}
-          />
+          <select defaultValue={values.dobmonth} onChange={this.props.handleChange('dobmonth')}>
+            <option value="" disabled>Month</option>
+            <option value="Jan">Jan</option>
+            <option value="Feb">Feb</option>
+          </select>
         </Grid.Column>
-
+        <Grid.Column>
+          <select defaultValue={values.dobmonth} onChange={this.props.handleChange('dobday')}>
+            <option value="" disabled>Day</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </Grid.Column>
+        <Grid.Column>
+          <select defaultValue={values.dobmonth} onChange={this.props.handleChange('dobyear')}>
+            <option value="" disabled>Year</option>
+            <option value="1980">1980</option>
+            <option value="1981">1981</option>
+          </select><br/>
+        </Grid.Column>
         </Grid>
       </div>
       <Button onClick={this.back}>Back</Button>
