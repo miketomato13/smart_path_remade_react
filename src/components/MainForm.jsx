@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 import UserDetails from './UserDetails';
 import PersonalDetails from './PersonalDetails';
 import Confirmation from './Confirmation';
+import PhoneNumber from './PhoneNumber';
+import DobGender from './DobGender';
 import Success from './Success';
+
+
 
 class MainForm extends Component {
   state = {
@@ -11,10 +15,16 @@ class MainForm extends Component {
     firstName: '',
     lastName: '',
     email: '',
-    age: '',
+    zip: '',
+    address: '',
     city: '',
-    country: ''
-  }
+    state: '',
+    dobmonth: '',
+    dobday: '',
+    dobyear: '',
+    phoneNumber: '',
+    gender: ''
+    }
 
   nextStep = () => {
     const { step } = this.state
@@ -34,10 +44,12 @@ class MainForm extends Component {
     this.setState({ [input] : event.target.value })
   }
 
+
   render(){
     const {step} = this.state
-    const { firstName, lastName, email, age, city, country } = this.state
-    const values = { firstName, lastName, email, age, city, country }
+    const { firstName, lastName, email, zip, address, city, state, dobmonth, dobday, dobyear, phoneNumber, gender } = this.state
+    const values = { firstName, lastName, email, zip, address, city, state, dobmonth, dobday, dobyear, phoneNumber, gender }
+
     switch(step){
       case 1:
         return <UserDetails
@@ -53,12 +65,26 @@ class MainForm extends Component {
                 values={values}
                 />
       case 3:
+        return <PhoneNumber
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+                />
+      case 4:
+        return <DobGender
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+                />
+      case 5:
         return <Confirmation
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 values={values}
                 />
-      case 4:
+      case 5:
         return <Success />
     }
   }

@@ -14,7 +14,7 @@ class Confirmation extends Component{
   }
 
   render(){
-    const {values: {firstName, lastName, email, age, city, country }} = this.props;
+    const {values: { firstName, lastName, email, city, state, dobmonth, dobday, dobyear, phoneNumber }} = this.props;
 
     return(
       <div>
@@ -34,12 +34,23 @@ class Confirmation extends Component{
             <List.Content> <a href='mailto:blah@gmail.com'>{email}</a></List.Content>
           </List.Item>
           <List.Item>
-            <List.Icon name='calendar' />
-            <List.Content>{age}</List.Content>
+            <List.Icon name='marker' />
+            <List.Content>{city}, {state}</List.Content>
           </List.Item>
           <List.Item>
             <List.Icon name='marker' />
-            <List.Content>{city}, {country}</List.Content>
+            <List.Content>{dobmonth}</List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Icon name='marker' />
+            <List.Content>{dobday}</List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Icon name='marker' />
+            <List.Content>{dobyear}</List.Content>
+          </List.Item><List.Item>
+            <List.Icon name='marker' />
+            <List.Content>{phoneNumber}</List.Content>
           </List.Item>
 
           <Button onClick={this.back}>Back</Button>
