@@ -45,6 +45,11 @@ render(){
           </select><br/>
         </Grid.Column>
         </Grid>
+        <select defaultValue={values.gender} onChange={this.props.handleChange('gender')}>
+          <option value="" disabled>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select><br/>
       </div>
       <Button onClick={this.back}>Back</Button>
       <Button onClick={this.saveAndContinue}>Continue</Button>
