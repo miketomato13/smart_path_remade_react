@@ -43,16 +43,9 @@ class Confirmation extends Component{
           </List.Item>
           <List.Item>
             <List.Icon name='marker' />
-            <List.Content>{dobday}</List.Content>
-          </List.Item>
-          <List.Item>
-            <List.Icon name='marker' />
-            <List.Content>{dobyear}</List.Content>
-          </List.Item><List.Item>
-            <List.Icon name='marker' />
             <List.Content>{phoneNumber}</List.Content>
           </List.Item>
-          
+
 
           <Button onClick={this.back}>Back</Button>
           <Button onClick={this.saveAndContinue}>Confirm</Button>
