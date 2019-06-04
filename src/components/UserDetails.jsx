@@ -44,7 +44,8 @@ class UserDetails extends Component {
           defaultValue={values.zip}
           />
         </Form.Field>
-        <Button onClick={this.saveAndContinue}>Continue >></Button>
+        <Button disabled={!values.firstName || !values.lastName || !values.email || !values.zip}
+        onClick={this.saveAndContinue}>Continue >></Button>
       </Form>
       <Disclaimer />
       </div>

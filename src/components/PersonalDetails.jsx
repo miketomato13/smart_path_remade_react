@@ -38,7 +38,9 @@ class PersonalDetails extends Component {
           />
         </Form.Field>
         <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Continue</Button>
+        <Button
+        disabled={!values.address || !values.city || !values.state}
+        onClick={this.saveAndContinue}>Continue >></Button>
       </Form>
     )
 }
