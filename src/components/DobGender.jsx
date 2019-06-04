@@ -169,7 +169,7 @@ render(){
         </select><br/>
       </div>
       <Button onClick={this.back}>Back</Button>
-      <Button onClick={this.saveAndContinue}>Continue</Button>
+      <Button onClick={this.saveAndContinue}>Continue >></Button>
     </Form>
     )
   }

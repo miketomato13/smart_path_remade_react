@@ -26,8 +26,13 @@ class PhoneNumber extends Component {
            defaultValue={values.phoneNumber}
           />
         </Form.Field>
-        <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Continue</Button>
+        <Form.Button
+          onClick={this.back}
+            >Back
+        </Form.Button>
+        <Form.Button
+        disabled={!values.phoneNumber}
+        onClick={this.saveAndContinue}>Continue >></Form.Button>
       </Form>
       <PhoneDisclaimer />
       </div>

@@ -18,8 +18,8 @@ class Confirmation extends Component{
 
     return(
       <div>
-        <h1 className="ui centered">Confirm your Details</h1>
-        <p>Click Confirm if the following details have been correctly entered</p>
+        <h1 className="ui centered">test</h1>
+        <p>mimicing passing props to an api</p>
         <List>
           <List.Item>
             <List.Icon name='users'/>
@@ -45,8 +45,6 @@ class Confirmation extends Component{
             <List.Icon name='marker' />
             <List.Content>{phoneNumber}</List.Content>
           </List.Item>
-
-
           <Button onClick={this.back}>Back</Button>
           <Button onClick={this.saveAndContinue}>Confirm</Button>
         </List>
